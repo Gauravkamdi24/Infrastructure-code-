@@ -105,7 +105,7 @@ resource "aws_instance" "jenkins_server" {
   security_groups = ["${aws_security_group.jenkins_sg.id}"]
   subnet_id       = aws_subnet.public_subnet.id
 
- user_data = file("user_data.sh") # Load user data from the external script
+ user_data = file("jenkins_user_data.sh") # Load user data from the external script
   
   tags = var.instance_tags # Use variable tags
 
